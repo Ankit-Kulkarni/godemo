@@ -1,0 +1,11 @@
+.vscode/
+godeploy-demo
+builds/
+build/bin/
+build/rpms/
+build/debs/
+*.rpm
+*.deb
+rpms/
+debs
+__debug_bin

@@ -1,0 +1,32 @@
+# nfpm example config file
+#
+# check https://nfpm.goreleaser.com/configuration for detailed usage
+#
+
+## npfm package creation command : 
+
+## nfpm pkg --packager rpm --target /tmp/
+
+
+name: "godeploy-demo"
+arch: "amd64"
+platform: "linux"
+version: v${PACKAGE_VERSION}
+section: "default"
+priority: "extra"
+maintainer: "Ankit Kulkarni<ankit.kul1890@gmail.com>"
+description: |
+  The package shows a rpm demo installation
+vendor: "Ankit"
+
+contents:
+- dst: /opt/godemo
+  type: dir
+  file_info:
+    mode: 0755
+- src: "./bin/godeploy-demo"
+  dst: /usr/local/bin/godeploy-demo
+  file_info:
+    mode: 0755
+    owner: root
+    group: root
